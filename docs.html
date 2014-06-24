@@ -4,6 +4,47 @@
         <meta charset="utf-8" />
         <title>Serial Experiments - Documentation</title>
 		<script src="timer.js"></script>
+
+        <style>
+            html {
+                font: 14px/1 Arial, sans-serif;
+            }
+            body {
+                color: #1e2625;
+                background: #f9f8f4;
+                padding: 0;
+                margin: 0;
+            }
+            h1 {
+                color: #da9c6b;
+                font-size: 1.5rem;
+                text-align: center;
+                /*font-style: italic;*/
+                font-weight: normal;
+                /*text-transform: uppercase;*/
+                /*background: #fffefa;*/
+                padding: 2rem 1rem;
+                margin: 0;
+
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            article {
+                background: #fffefc;
+                /*width: 600px;
+                margin: 0 auto;*/
+                max-width: 500px;
+                padding: 2rem;
+                margin: 0 auto;
+            }
+
+            h3 {
+                font-family: monospace,sans-serif;
+            }
+            h3 + p {
+                margin: 0 0 0 2rem;
+            }
+        </style>
 	</head>
 	<body>
         <h1>Serial Experiments</h1>
@@ -11,16 +52,20 @@
         <article>
             <h2>Timer</h2>
             <p></p>
-            <h3>start</h3>
-            <p>Start the timer-</p>
 
-            <h3>stop</h3>
+            <h3>Timer()</h3>
+            <p>Constructor.</p>
+
+            <h3>start()</h3>
+            <p>Start the timer.</p>
+
+            <h3>stop()</h3>
             <p>Stop the timer.</p>
 
-            <h3>reset</h3>
+            <h3>reset()</h3>
             <p>Reset the start and stop time.</p>
 
-            <h3>time</h3>
+            <h3>time()</h3>
             <p>Returns the number of milliseconds that has elapsed between start and stop was called respectively. If the timer is running, the currently elapsed time will be returned. If the timer has not been started '0' will be the value.</p>
             <h4>Returns</h4>
             <p>Elapsed milliseconds as int.</p>
