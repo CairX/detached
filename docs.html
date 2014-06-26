@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Serial Experiments - Documentation</title>
 		<script src="timer.js"></script>
+        <script src="dateformatter.js"></script>
 
         <style>
             @font-face {
@@ -37,8 +38,9 @@
             }
             article {
                 max-width: 500px;
-                padding: 0;
-                margin: 0 auto;
+                padding: 0 0 2.5rem;
+                margin: 0 auto 2.5rem;
+                border-bottom: 1px solid #1e2625;
             }
             h2 {
                 margin-top: 0;
@@ -46,12 +48,6 @@
             h3 {
                 font-family: Inconsolata, monospace,sans-serif;
                 font-weight: normal;
-            }
-            h3 + p {
-                margin: 0 0 0 2rem;
-            }
-            h4, h4 + p {
-                margin-left: 2rem;
             }
         </style>
 	</head>
@@ -76,8 +72,116 @@
 
             <h3>time()</h3>
             <p>Returns the number of milliseconds that has elapsed between start and stop was called respectively. If the timer is running, the currently elapsed time will be returned. If the timer has not been started '0' will be the value.</p>
-            <h4>Returns</h4>
-            <p>Elapsed milliseconds as int.</p>
+            <dl>
+                <dt><strong>Returns</strong></dt>
+                <dd>Elapsed milliseconds as int.</dd>
+            </dl>
+        </article>
+
+        <article>
+            <h2>DateFormatter</h2>
+
+            <h3>DateFormatter.format(date, format)</h3>
+
+            <dl>
+                <dt><strong>Paramters</strong></dt>
+                <dd>date - JavaScript date object, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">read more</a>.</dd>
+                <dd>format - String containing the <a href="#formats">format</a>.</dd>
+                <dt><strong>Returns</strong></dt>
+                <dd>String with the format replaced with the given date values.</dd>
+            </dl>
+        </article>
+
+        <article>
+            <h2 id="formats">Date Formats</h2>
+            <p>Based on <a href="https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior">https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior</a></p>
+            <h3>Date</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>%a</td>
+                        <td>Weekday, abbreviated.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%a'));</script></td>
+                    </tr><tr>
+                        <td>%A</td>
+                        <td>Weeday, full name.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%A'));</script></td>
+                    </tr><tr>
+                        <td>%w</td>
+                        <td>Weekday as a decimal number where 0 is Sunday and 6 is Saturday.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%w'));</script></td>
+                    </tr><tr>
+                        <td>%d</td>
+                        <td>Day of the month as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%d'));</script></td>
+                    </tr><tr>
+                        <td>%b</td>
+                        <td>Month, abbreviated.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%b'));</script></td>
+                    </tr><tr>
+                        <td>%B</td>
+                        <td>Month, full name.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%B'));</script></td>
+                    </tr><tr>
+                        <td>%m</td>
+                        <td>Month as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%m'));</script></td>
+                    </tr><tr>
+                        <td>%y</td>
+                        <td>Year without century as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%y'));</script></td>
+                    </tr><tr>
+                        <td>%Y</td>
+                        <td>Year with century as a decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%Y'));</script></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Time</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>%H</td>
+                        <td>Hour (24-hour clock) as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%H'));</script></td>
+                    </tr><tr>
+                        <td>%I</td>
+                        <td>Hour (12-hour clock) as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%I'));</script></td>
+                    </tr><tr>
+                        <td>%p</td>
+                        <td>AM and PM</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%p'));</script></td>
+                    </tr><tr>
+                        <td>%M</td>
+                        <td>Minute as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%M'));</script></td>
+                    </tr><tr>
+                        <td>%S</td>
+                        <td>Second as a zero-padded decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%S'));</script></td>
+                    </tr><tr>
+                        <td>%f</td>
+                        <td>Millisecond as a decimal number.</td>
+                        <td><script>document.write(DateFormatter.format(new Date(), '%f'));</script></td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
 	</body>
 </html>

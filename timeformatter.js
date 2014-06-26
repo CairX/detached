@@ -2,7 +2,7 @@ function TimeFormatter() {}
 TimeFormatter.format = function (milliseconds, format) {
     'use strict';
     if (milliseconds === null || format === null) { return ''; }
-    
+
     var negative = milliseconds < 0;
     if (negative) {
         milliseconds *= -1;
