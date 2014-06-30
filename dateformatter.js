@@ -2,27 +2,11 @@
 
 var DateFormatter = (function () {
     'use strict';
-    var self = {};
 
     var months = ['January', 'February', 'Mars', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var monthsAbbreviated = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var daysAbbreviated = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-    self.format = function(date, format) {
-        if (date === null || format === null) { return ''; }
-
-        var result = format;
-        // TODO Remove duplicate results.
-        var directives = format.match(/(%[aAwdbBmyYHIpMSf]{1})/g);
-        if (directives !== null) {
-            for (var index = 0; index < directives.length; index++) {
-                result = replace(date, directives[index], result);
-            }
-        }
-
-        return result;
-    };
 
     var replace = function(date, directive, s) {
         // TODO Make it possible to have language options.
@@ -87,6 +71,26 @@ var DateFormatter = (function () {
 
     var zero = function(s) {
         return s.toString().length == 1 ? ('0' + s) : s;
+    };
+
+
+    /* Public
+    /*************************************/
+    var self = {};
+
+    self.format = function(date, format) {
+        if (date === null || format === null) { return ''; }
+
+        var result = format;
+        // TODO Remove duplicate results.
+        var directives = format.match(/(%[aAwdbBmyYHIpMSf]{1})/g);
+        if (directives !== null) {
+            for (var index = 0; index < directives.length; index++) {
+                result = replace(date, directives[index], result);
+            }
+        }
+
+        return result;
     };
 
     return self;
