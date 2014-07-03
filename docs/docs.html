@@ -5,54 +5,28 @@
 
         <title>Serial Experiments - Documentation</title>
 
-        <script src="../timer.js"></script>
-        <script src="../dateformatter.js"></script>
         <link href="style.css" type="text/css" rel="stylesheet" />
+
+        <script src="../dateformatter.js"></script>
+        <script src="../tabs.js"></script>
+        <script src="../timer.js"></script>
+
+        <script>
+            Tabs.init();
+        </script>
     </head>
     <body>
         <header>
             <h1>Serial Experiments</h1>
         </header>
 
-        <article>
-            <h2>Timer</h2>
-            <p></p>
+        <ul id="tabs">
+            <li class="tab" id="dateformatter">DateFormatter</li>
+            <li class="tab" id="timeformatter">TimeFormatter</li>
+            <li class="tab" id="timer">Timer</li>
+        </ul>
 
-            <h3>Timer()</h3>
-            <p>Constructor.</p>
-
-            <h3>start()</h3>
-            <p>Start the timer.</p>
-
-            <h3>stop()</h3>
-            <p>Stop the timer.</p>
-
-            <h3>reset()</h3>
-            <p>Reset the start and stop time.</p>
-
-            <h3>time()</h3>
-            <p>Returns the number of milliseconds that has elapsed between start and stop was called respectively. If the timer is running, the currently elapsed time will be returned. If the timer has not been started '0' will be the value.</p>
-            <dl>
-                <dt><strong>Returns</strong></dt>
-                <dd>Elapsed milliseconds as int.</dd>
-            </dl>
-        </article>
-
-        <article>
-            <h2>TimeFormatter</h2>
-
-            <h3>TimeFormatter.format(milliseconds, format)</h3>
-
-            <dl>
-                <dt><strong>Paramters</strong></dt>
-                <dd>milliseconds - Unsigned integer representing the time in milliseconds.</dd>
-                <dd>format - String with the format to insert the given time. See format below for more information.</dd>
-                <dt><strong>Returns</strong></dt>
-                <dd>String with the format replaced with the given date values.</dd>
-            </dl>
-        </article>
-
-        <article>
+        <article class="tab-content">
             <h2>DateFormatter</h2>
 
             <h3>DateFormatter.format(date, format)</h3>
@@ -60,14 +34,12 @@
             <dl>
                 <dt><strong>Paramters</strong></dt>
                 <dd>date - JavaScript date object, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">read more</a>.</dd>
-                <dd>format - String with the format to insert the given time. See format below for more information.</dd>
+                <dd>format - String with the format to insert the given time. See format information below.</dd>
                 <dt><strong>Returns</strong></dt>
                 <dd>String with the format replaced with the given date values.</dd>
             </dl>
-        </article>
 
-        <article>
-            <h2 id="formats">Date Formats</h2>
+            <h2 id="formats">Formats</h2>
             <p>Based on <a href="https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior">https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior</a></p>
             <h3>Date</h3>
             <table>
@@ -156,6 +128,44 @@
                     </tr>
                 </tbody>
             </table>
+        </article>
+
+        <article class="tab-content">
+            <h2>TimeFormatter</h2>
+
+            <h3>TimeFormatter.format(date, format)</h3>
+
+            <dl>
+                <dt><strong>Paramters</strong></dt>
+                <dd>date - JavaScript date object, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">read more</a>.</dd>
+                <dd>format - String with the format to insert the given time. (Format information to come.)</dd>
+                <dt><strong>Returns</strong></dt>
+                <dd>String with the format replaced with the given date values.</dd>
+            </dl>
+        </article>
+
+        <article class="tab-content">
+            <h2>Timer</h2>
+            <p>A simple timer...</p>
+
+            <h3>Timer()</h3>
+            <p>Constructor.</p>
+
+            <h3>start()</h3>
+            <p>Start the timer.</p>
+
+            <h3>stop()</h3>
+            <p>Stop the timer.</p>
+
+            <h3>reset()</h3>
+            <p>Reset the start and stop time.</p>
+
+            <h3>time()</h3>
+            <p>Returns the number of milliseconds that has elapsed between start and stop was called respectively. If the timer is running, the currently elapsed time will be returned. If the timer has not been started '0' will be the value.</p>
+            <dl>
+                <dt><strong>Returns</strong></dt>
+                <dd>Elapsed milliseconds as int.</dd>
+            </dl>
         </article>
     </body>
 </html>
