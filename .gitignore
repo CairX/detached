@@ -1,2 +1,2 @@
-# Ignore Finder files
 .DS_Store
+.sass-cache

@@ -1,45 +1,51 @@
+/* Fonts
+/*************************************/
 @font-face {
-    font-family: 'Bebas';
-    src: url('fonts/bebas-neue-book.otf');
-}
+  font-family: 'Bebas';
+  src: url("fonts/bebas-neue-book.otf"); }
 @font-face {
-    font-family: 'Inconsolata';
-    src: url('fonts/inconsolata.otf');
-}
-
+  font-family: 'Inconsolata';
+  src: url("fonts/inconsolata.otf"); }
+/* Variables
+/*************************************/
+/* General
+/*************************************/
 html {
-    font: 14px/1 Arial, sans-serif;
-}
+  font: 14px/1 Arial, sans-serif; }
+
 body {
-    color: #1e2625;
-    background: #f9f8f4;
-    padding: 0;
-    margin: 0 2rem;
-}
+  color: rgba(0, 0, 0, 0.87);
+  background: #eeeeee;
+  padding: 0;
+  margin: 0; }
+
+header {
+  font-family: Bebas;
+  text-align: center;
+  background: #3f51b5;
+  padding: 3rem 0;
+  margin: 0 0 3rem; }
 
 article {
-    max-width: 500px;
-    padding: 0 0 2.5rem;
-    margin: 0 auto 2.5rem;
-    border-bottom: 1px solid #1e2625;
-}
+  background: white;
+  max-width: 600px;
+  padding: 3rem;
+  margin: 0 auto 2.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 2px; }
 
 h1 {
-    color: #da9c6b;
-    font-family: Bebas;
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: normal;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0; }
 
-    padding: 2.5rem 0;
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
-    border-bottom: 1px solid;
-}
 h2 {
-    margin-top: 0;
-}
+  font-weight: normal;
+  margin: 0; }
+
 h3 {
-    font-family: Inconsolata, monospace,sans-serif;
-    font-weight: normal;
-}
+  color: #e91e63;
+  font-family: Inconsolata, monospace,sans-serif;
+  font-weight: normal; }
