@@ -8,6 +8,10 @@
     font-family: 'Inconsolata';
     src: url('fonts/inconsolata.otf');
 }
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-regular.ttf');
+}
 
 /* Variables
 /*************************************/
@@ -20,7 +24,7 @@ $spacing: 3rem;
 /* General
 /*************************************/
 html {
-    font: 14px/1 Arial, sans-serif;
+    font: 14px/1 Roboto, Arial, sans-serif;
 }
 body {
     color: rgba(0, 0, 0, 0.87);
@@ -29,6 +33,10 @@ body {
     padding: 0;
     margin: 0;
     overflow-y: scroll;
+}
+
+table, dl {
+    line-height: 1.5;
 }
 
 header {
@@ -71,6 +79,27 @@ h3 {
     font-family: Inconsolata, monospace,sans-serif;
     font-weight: normal;
 }
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+th {
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: ($spacing / 6);
+
+    &:first-child, &:last-child {
+        width: 6rem;
+    }
+}
+td {
+    vertical-align: top;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: ($spacing / 6);
+}
+
 
 #tabs {
     background: white;
