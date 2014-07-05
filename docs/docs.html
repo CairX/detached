@@ -27,21 +27,31 @@
         </ul>
 
         <article class="tab-content">
-            <h2>DateFormatter</h2>
+            <h2>DateFormatter <span>dateformatter.js</span></h2>
+            <p>Convert a date object into a more readable string based on a format the you specify. This method also extends the possiblity to use textual names for weekdays and months. At the moment these names are limited to English by default, however you can easly change the soruce code with your prefered language.</p>
 
-            <h3>DateFormatter.format(date, format)</h3>
+            <h3>Example</h3>
+            <code>
+                var date = DateFormatter.format(new Date(), '%d %B %Y');<br />
+                alert(date); // Ex. 01 January 2014
+            </code>
 
-            <dl>
-                <dt><strong>Paramters</strong></dt>
-                <dd>date - JavaScript date object, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">read more</a>.</dd>
-                <dd>format - String with the format to insert the given time. See format information below.</dd>
-                <dt><strong>Returns</strong></dt>
-                <dd>String with the format replaced with the given date values.</dd>
-            </dl>
+            <h3>Methods</h3>
+            <section class="method">
+                <h4>DateFormatter.format(date, format)</h4>
 
-            <h2 id="formats">Formats</h2>
-            <p>Based on <a href="https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior">https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior</a></p>
-            <h3>Date</h3>
+                <dl>
+                    <dt><h5>Paramters</h5></dt>
+                    <dd><code>date</code> - JavaScript date object representing the date to format. Read more about the date object at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">MDN</a>.</dd>
+                    <dd><code>format</code> - String with the format to insert the given time. See format information below.</dd>
+                    <dt><h5>Returns</h5></dt>
+                    <dd>String with the format replaced with the given date values.</dd>
+                </dl>
+            </section>
+
+            <h3 id="formats">Formats</h3>
+            <!--p>Based on <a href="https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior">https://docs.python.org/3.5/library/datetime.html#strftime-strptime-behavior</a></p-->
+            <h4>Date</h4>
             <table>
                 <thead>
                     <tr>
@@ -91,7 +101,7 @@
                 </tbody>
             </table>
 
-            <h3>Time</h3>
+            <h4>Time</h4>
             <table>
                 <thead>
                     <tr>

@@ -28,6 +28,9 @@ var Tabs = (function() {
         select(0)();
     };
 
+
+    /* Public
+    /*************************************/
     var self = {};
 
     self.init = function() {
