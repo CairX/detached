@@ -40,7 +40,7 @@ body {
     overflow-y: scroll;
 }
 
-p, table, dl {
+p, table, dl, code {
     line-height: 1.5;
 }
 
@@ -89,7 +89,7 @@ h3 {
 .method h4 {
     //color: #e91e63;
     font-family: monospace,sans-serif;
-    font-weight: normal;
+    //font-weight: normal;
     //margin: 0 0 $spacing;
 }
 h5 {
@@ -112,6 +112,9 @@ article {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
 }
+.hljs {
+    padding: $spacing;
+}
 
 /* Tables
 /*************************************/
@@ -125,16 +128,17 @@ th {
     border: 1px solid rgba(0, 0, 0, 0.12);
     padding: ($spacing / 6);
 
-    &:first-child, &:last-child {
-        width: 6rem;
-    }
+
 }
 td {
     vertical-align: top;
     border: 1px solid rgba(0, 0, 0, 0.12);
     padding: ($spacing / 6);
 }
-
+th:first-child,
+.dateformatter th:last-child {
+    width: 6rem;
+}
 
 #tabs {
     background: white;

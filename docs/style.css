@@ -27,7 +27,7 @@ body {
   margin: 0;
   overflow-y: scroll; }
 
-p, table, dl {
+p, table, dl, code {
   line-height: 1.5; }
 
 a {
@@ -65,8 +65,7 @@ h3 {
   margin: 3rem 0 1.5rem; }
 
 .method h4 {
-  font-family: monospace,sans-serif;
-  font-weight: normal; }
+  font-family: monospace,sans-serif; }
 
 h5 {
   margin: 0;
@@ -84,6 +83,9 @@ article {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 2px; }
 
+.hljs {
+  padding: 1.5rem; }
+
 /* Tables
 /*************************************/
 table {
@@ -95,13 +97,15 @@ th {
   text-align: left;
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 0.25rem; }
-  th:first-child, th:last-child {
-    width: 6rem; }
 
 td {
   vertical-align: top;
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 0.25rem; }
+
+th:first-child,
+.dateformatter th:last-child {
+  width: 6rem; }
 
 #tabs {
   background: white;
