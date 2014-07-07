@@ -3,7 +3,7 @@
 var Tabs = (function() {
     'use strict';
 
-    var tabs, contents;
+    var tabs, contents, tabz, contentz;
 
     var select = function(index) {
         return function () {
@@ -13,13 +13,15 @@ var Tabs = (function() {
             }
 
             // Display the selected conent.
-            contents[index].style.display = 'block';
+            if (contents[index]) {
+                contents[index].style.display = 'block';
+            }
         };
     };
 
     var init = function() {
-        tabs = document.getElementsByClassName('tab');
-        contents = document.getElementsByClassName('tab-content');
+        tabs = document.getElementsByClassName(tabz);
+        contents = document.getElementsByClassName(contentz);
 
         for (var i = 0; i < tabs.length; i++) {
             tabs[i].addEventListener('click', select(i), false);
@@ -33,7 +35,10 @@ var Tabs = (function() {
     /*************************************/
     var self = {};
 
-    self.init = function() {
+    self.init = function(tabClassName, tabContentClassName) {
+        tabz = tabClassName;
+        contentz = tabContentClassName;
+
         window.addEventListener('load', init, false);
     };
 
