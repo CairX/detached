@@ -5,4 +5,4 @@ Collection of JavaScript snippets.
 
 Documentation
 -------------
-Can be found [http://tcode.se/serial-experiments-documentation/](here)
+Can be found [here](http://tcode.se/serial-experiments-documentation/).
