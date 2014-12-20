@@ -1,16 +1,11 @@
 var Ajax = (function() {
     'use strict';
 
-    var defaults = function(options) {
-        options = (typeof options !== 'undefined') ? options : {};
-
-        if (!('method' in options)) {
-            options.method = 'GET';
-        }
+    var init = function(options) {
+        return (typeof options !== 'undefined') ? options : {};
     };
-    var r = function(url, options) {
-        defaults(options);
 
+    var standard = function(url, options) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState === 4) {
@@ -39,5 +34,16 @@ var Ajax = (function() {
         }
     };
 
-    return { 'request': r };
+    var get = function(url, options) {
+        options = init(options);
+        options.method = 'GET';
+        standard(url, options);
+    };
+    var post = function(url, options) {
+        options = init(options);
+        options.method = 'POST';
+        standard(url, options);
+    };
+
+    return { 'get': get, 'post': post, 'request': standard };
 })();
