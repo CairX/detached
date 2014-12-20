@@ -1,21 +1,14 @@
-function Ajax(url, options) {
+var Ajax = (function() {
     'use strict';
 
-    options = (typeof options !== 'undefined') ? options : {};
-    this.init(url, options);
-}
-Ajax.prototype = (function () {
-    'use strict';
+    var defaults = function(options) {
+        options = (typeof options !== 'undefined') ? options : {};
 
-    var defaults = function (options) {
         if (!('method' in options)) {
             options.method = 'GET';
         }
     };
-
-    var self = {};
-
-    self.init = function (url, options) {
+    var r = function(url, options) {
         defaults(options);
 
         var request = new XMLHttpRequest();
@@ -46,5 +39,5 @@ Ajax.prototype = (function () {
         }
     };
 
-    return self;
+    return { 'request': r };
 })();
