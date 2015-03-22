@@ -7,7 +7,7 @@ Documentation
 -------------
 
 ### Colors
-Exporeted methods.
+Color utils suppoting operations with RGB.
 
 
 #### rgb.round
@@ -61,3 +61,30 @@ Create list of colors that transist from given first and second color. Where if 
 * **steps** *Integer* Number of transition steps.
 
 **Return** *Array* List of color strings.
+
+
+### Timer
+Simple timer.
+
+#### start
+Start timer.
+
+
+#### stop
+Stop timer.
+
+
+#### reset
+Reset timer.
+
+
+#### time
+Returns the number of milliseconds that has elapsed between start and stop was called respectively. If the timer is running, the currently elapsed time will be returned. If the timer has not been started '0' will be the value.
+
+
+**Return** *Integer* Elapsed milliseconds.
+
+
+#### running
+
+**Return** *Boolean* True while the timer is active.
