@@ -5,7 +5,7 @@ function Timer() {}
  * @section Timer
  * ------------------------------------------------- */
 Timer.prototype = (function () {
-    'use strict';
+    "use strict";
 
     var self = {};
     var started = null, stopped = null;
@@ -43,7 +43,7 @@ Timer.prototype = (function () {
      * elapsed between start and stop was called
      * respectively. If the timer is running, the
      * currently elapsed time will be returned.
-     * If the timer has not been started '0' will be
+     * If the timer has not been started "0" will be
      * the value.
      *
      * @return {Integer} Elapsed milliseconds.
