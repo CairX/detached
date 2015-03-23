@@ -1,8 +1,15 @@
+/* exported Ajax */
+
+
+"use strict";
+
+/* ------------------------------------------------- *
+ * @section Ajax
+ * ------------------------------------------------- */
 var Ajax = (function() {
-    'use strict';
 
     var init = function(options) {
-        return (typeof options !== 'undefined') ? options : {};
+        return (typeof options !== "undefined") ? options : {};
     };
 
     var standard = function(url, options) {
@@ -10,11 +17,11 @@ var Ajax = (function() {
         request.onreadystatechange = function () {
             if (request.readyState === 4) {
                 if (request.status >= 200 && request.status <= 299) {
-                    if('onSuccess' in options) {
+                    if("onSuccess" in options) {
                         options.onSuccess(request);
                     }
                 } else if (request.status >= 500 && request.status <= 599) {
-                    if('onFailure' in options) {
+                    if("onFailure" in options) {
                         options.onFailure(request);
                     }
                 }
@@ -23,11 +30,11 @@ var Ajax = (function() {
 
         request.open(options.method, url, true);
 
-        if ('contentType' in options){
-            request.setRequestHeader('Content-Type', options.contentType);
+        if ("contentType" in options){
+            request.setRequestHeader("Content-Type", options.contentType);
         }
 
-        if ('data' in options) {
+        if ("data" in options) {
             request.send(options.data);
         } else {
             request.send();
@@ -36,14 +43,15 @@ var Ajax = (function() {
 
     var get = function(url, options) {
         options = init(options);
-        options.method = 'GET';
-        standard(url, options);
-    };
-    var post = function(url, options) {
-        options = init(options);
-        options.method = 'POST';
+        options.method = "GET";
         standard(url, options);
     };
 
-    return { 'get': get, 'post': post, 'request': standard };
+    var post = function(url, options) {
+        options = init(options);
+        options.method = "POST";
+        standard(url, options);
+    };
+
+    return { "get": get, "post": post, "request": standard };
 })();
