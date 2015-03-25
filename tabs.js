@@ -1,46 +1,46 @@
 /* exported Tabs */
 
 var Tabs = (function() {
-    'use strict';
+	'use strict';
 
-    var tabs, contents, tabz, contentz;
+	var tabs, contents, tabz, contentz;
 
-    var select = function(index) {
-        return function () {
-            // Hide all contents.
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].style.display = 'none';
-            }
+	var select = function(index) {
+		return function () {
+			// Hide all contents.
+			for (var i = 0; i < contents.length; i++) {
+				contents[i].style.display = 'none';
+			}
 
-            // Display the selected conent.
-            if (contents[index]) {
-                contents[index].style.display = 'block';
-            }
-        };
-    };
+			// Display the selected conent.
+			if (contents[index]) {
+				contents[index].style.display = 'block';
+			}
+		};
+	};
 
-    var init = function() {
-        tabs = document.getElementsByClassName(tabz);
-        contents = document.getElementsByClassName(contentz);
+	var init = function() {
+		tabs = document.getElementsByClassName(tabz);
+		contents = document.getElementsByClassName(contentz);
 
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].addEventListener('click', select(i), false);
-        }
+		for (var i = 0; i < tabs.length; i++) {
+			tabs[i].addEventListener('click', select(i), false);
+		}
 
-        select(0)();
-    };
+		select(0)();
+	};
 
 
-    /* Public
-    /*************************************/
-    var self = {};
+	/* Public
+	/*************************************/
+	var self = {};
 
-    self.init = function(tabClassName, tabContentClassName) {
-        tabz = tabClassName;
-        contentz = tabContentClassName;
+	self.init = function(tabClassName, tabContentClassName) {
+		tabz = tabClassName;
+		contentz = tabContentClassName;
 
-        window.addEventListener('load', init, false);
-    };
+		window.addEventListener('load', init, false);
+	};
 
-    return self;
+	return self;
 })();
