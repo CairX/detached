@@ -66,7 +66,7 @@ var Ajax = (function() {
 	self.get = function(url, options) {
 		options = init(options);
 		options.method = "GET";
-		self.standard(url, options);
+		self.request(url, options);
 	};
 
 
@@ -82,7 +82,7 @@ var Ajax = (function() {
 	self.post = function(url, options) {
 		options = init(options);
 		options.method = "POST";
-		self.standard(url, options);
+		self.request(url, options);
 	};
 
 	return self;
